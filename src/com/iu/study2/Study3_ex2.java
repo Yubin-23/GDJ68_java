@@ -40,18 +40,18 @@ public class Study3_ex2 {
 			System.out.println("급여를 입력하세요");
 			int sal = sc.nextInt();
 			
-			if(job==1) {
-				double tax = sal*0.03;
-				tax += sal*0.02;
-				tax += sal*0.01;
-				tax += sal*0.01;
-				sal = (int)(sal-tax);
-			}else if(job==2) {
-				sal = (int)(sal*0.967);
-			}else {
-				System.out.println("잘못 눌렀습니다.");
-			}
-			System.out.println("실급여: "+sal);
+//			if(job==1) {
+//				double tax = sal*0.03;
+//				tax += sal*0.02;
+//				tax += sal*0.01;
+//				tax += sal*0.01;
+//				sal = (int)(sal-tax);
+//			}else if(job==2) {
+//				sal = (int)(sal*0.967);
+//			}else {
+//				System.out.println("잘못 눌렀습니다.");
+//			}
+//			System.out.println("실급여: "+sal);
 			
 			switch(job) {
 			case 1:
