@@ -12,7 +12,6 @@ public class Study5_while_ex1 {
 		//while
 		//1.로그인 시도, 2.프로그램 종료
 		boolean check = true;
-		boolean login = false;
 		
 		while(check) {
 			System.out.println("1.로그인, 2.종료");
@@ -26,13 +25,12 @@ public class Study5_while_ex1 {
 				
 				if(userId==id && userPw==pw) {
 					System.out.println("로그인 성공");
-					login = true;
 					break;
 				}else {
 					System.out.println("로그인 실패");
 				}
 			}else {
-				break;
+				check = false; //check = !check
 			}
 		}
 		
@@ -55,35 +53,63 @@ public class Study5_while_ex1 {
 		
 		//현재레벨, gold 출력 
 		
-		if(login) {
-			int level = 1;	
+		if(check) {
+//			int level = 1;	
+//			int gold = 0;
+//			int select;
+//			
+//			for(int i=1; i<15; i++) {
+//				for(int j=0; j<3*i; j++) {
+//					System.out.println(j+l+"마리 사냥성공");
+//				}
+//				level = i+1;
+//				System.out.println("축 레벨업! 현재레벨 "+level);
+//				
+//				if(level==5) {
+//					gold += 1000;
+//				}else if(level==10) {
+//					gold += 2000;
+//				}else if(level==15) {
+//					gold += 3000;
+//					System.out.println("현재 레벨: "+level+", gold: "+gold);
+//					break;
+//				}
+//				
+//				System.out.println("1.계속, 2.종료");
+//				select = sc.nextInt();
+//				if(select==2) {
+//					break;
+//				}
+//			}	
+//		}
+		
+			int level = 1;
 			int gold = 0;
-			int select;
 			
-			for(int i=1; i<15; i++) {
-				for(int j=0; j<3*i; j++) {
-					System.out.println("사냥성공");
+			for(level=1; level<15; level++) {
+				if(level%5==0) {
+					System.out.println(level+"레벨 달성 축하합니다");
+					gold += level/5*1000;
 				}
-				level = i+1;
-				System.out.println("축 레벨업! 현재레벨 "+level);
 				
-				if(level==5) {
-					gold += 1000;
-				}else if(level==10) {
-					gold += 2000;
-				}else if(level==15) {
-					gold += 3000;
-					System.out.println("현재 레벨: "+level+", gold: "+gold);
+				//레벨업시 게임을 계속할지 종료할지 선택
+				System.out.println("1.사냥시작 2.게임종료");
+				int select = sc.nextInt();
+				if(select!=1) {
 					break;
 				}
 				
-				System.out.println("1.계속, 2.종료");
-				select = sc.nextInt();
-				if(select==2) {
-					break;
+				for(int monster=0; monster<level*3; monster++) {
+					System.out.println(monster+1+"마리 사냥 성공");
 				}
-			}	
-		}
+				System.out.println(level+1+"로 레벨업 했습니다.");
+			}//레벨업 과정
+			if(level==15) {
+				gold += 3000;
+			}
+			//현재레벨, gold가 출력
+			System.out.println("현재 레벨: "+level+" 현재 골드: "+gold);
+			}
 		System.out.println("프로그램 종료");
 	}
 }
