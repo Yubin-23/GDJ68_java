@@ -13,5 +13,6 @@ public class s2Main {
 //		Student s = ss.makeStudentOne();
 //		System.out.println(s.avg);
 		StudentControllor sc = new StudentControllor();
+		sc.start();
 	}
 }
