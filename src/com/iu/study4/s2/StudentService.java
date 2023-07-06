@@ -3,6 +3,24 @@ package com.iu.study4.s2;
 import java.util.Scanner;
 //학생 생성 및 정보 입력
 public class StudentService {
+	public Student findByNum(Student[] sa) {
+		//학생정보 검색
+		Scanner sc = new Scanner(System.in);
+		
+		Student s = null;
+		
+		System.out.println("찾으려는 학생의 번호를 입력하세요");
+		int num = sc.nextInt();
+		
+		for(int i=0; i<sa.length; i++) {
+			if(sa[i].getNum()==num) {
+				s = sa[i];
+				break;
+			}
+		}
+		return s;
+	}
+	
 	public Student makeStudentOne() {
 		//학생 1명을 만들어서 이름, 번호, 국어, 영어, 수학
 		//총점 평균을 계산
@@ -12,27 +30,25 @@ public class StudentService {
 		Student s = new Student();
 		
 		System.out.println("이름을 입력하세요");
-		s.name = sc.next();
+		s.setName(sc.next());
 		
 		System.out.println("번호를 입력하세요");
-		s.num = sc.nextInt();
+		s.setNum(sc.nextInt());
 		
 		System.out.println("국어 성적을 입력하세요");
-		s.kor = sc.nextInt();
+		s.setKor(sc.nextInt());
 		
 		System.out.println("영어 점수를 입력하세요");
-		s.eng = sc.nextInt();
+		s.setEng(sc.nextInt());
 		
 		System.out.println("수학 점수를 입력하세요");
-		s.math = sc.nextInt();
+		s.setMath(sc.nextInt());
 		
-		s.total = s.kor+s.eng+s.math;
-		s.avg = s.total/3;
+		s.setTotal(s.getKor()+s.getEng()+s.getMath());
+		s.setAvg(s.getTotal()/3);
 		
 		return s;
 	}
-	
-	
 	
 	//Student 배열 생성 
 	public Student[] makeStudents() {
@@ -56,22 +72,23 @@ public class StudentService {
 			Student s = new Student();
 			//3
 			System.out.println("이름을 입력하세요");
-			s.name = sc.next();
+			s.setName(sc.next());
 			
 			System.out.println("번호를 입력하세요");
-			s.num = sc.nextInt();
+			s.setNum(sc.nextInt());
 			
 			System.out.println("국어 성적을 입력하세요");
-			s.kor = sc.nextInt();
+			s.setKor(sc.nextInt());
 			
 			System.out.println("영어 점수를 입력하세요");
-			s.eng = sc.nextInt();
+			s.setEng(sc.nextInt());
 			
 			System.out.println("수학 점수를 입력하세요");
-			s.math = sc.nextInt();
+			s.setMath(sc.nextInt());
 			
-			s.total = s.kor+s.eng+s.math;
-			s.avg = s.total/3;
+//			s.total = s.kor+s.eng+s.math;
+//			s.avg = s.total/3;
+			s.cal(); //호출시 자동으로 총점과 평균 계산 
 			//4
 			sa[i] = s;
 		}
