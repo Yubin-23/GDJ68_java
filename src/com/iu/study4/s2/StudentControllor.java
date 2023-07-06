@@ -10,7 +10,7 @@ public class StudentControllor {
 		//2.학생정보 출력 -- SV에서 출력
 		//3.프로그램 종료
 		Scanner sc = new Scanner(System.in);
-		
+
 		StudentService ss = new StudentService();
 		StudentView sv = new StudentView();
 		Student[] sa = null;
