@@ -2,6 +2,7 @@ package com.iu.study4.s4;
 
 import com.iu.study4.s2.Student;
 import com.iu.study4.s3.Car;
+import com.iu.study4.s5.StaticTest;
 
 public class S4Main {
 	public static void main(String[] args) {
@@ -15,6 +16,6 @@ public class S4Main {
 		
 //		Student st = new Student();
 //		com.iu.study4.s2.Student student = new com.iu.study4.s2.Student();
-	
+		StaticTest.staticMethod();
 	}
 }
